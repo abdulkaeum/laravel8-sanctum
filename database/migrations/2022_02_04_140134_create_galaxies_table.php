@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGalexiesTable extends Migration
+class CreateGalaxiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateGalexiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('galexies', function (Blueprint $table) {
+        Schema::create('galaxies', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100)->unique();
             $table->string('about', 250)->nullable();
@@ -29,6 +29,6 @@ class CreateGalexiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('galexies');
+        Schema::dropIfExists('galaxies');
     }
 }
