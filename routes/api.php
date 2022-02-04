@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('register', [AuthController::class], 'register');
+Route::post('login', [AuthController::class], 'store');
+
+
+// authenticate users access using tokens via the sanctum authenticated guard
+Route::group(['middleware' => ['auth:sanctum']], function (){
+    Route::get('profile', function (){
+        return auth()->user();
+    });
+
+    Route::post('destroy', [AuthController::class], 'destroy');
 });
