@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('register', [AuthController::class], 'register');
-Route::post('login', [AuthController::class], 'store');
+Route::post('register', [AuthController::class, 'register'])->name('register');
+Route::post('login', [AuthController::class, 'store'])->name('login');
 
 
 // authenticate users access using tokens via the sanctum authenticated guard
@@ -25,5 +25,5 @@ Route::group(['middleware' => ['auth:sanctum']], function (){
         return auth()->user();
     });
 
-    Route::post('destroy', [AuthController::class], 'destroy');
+    Route::post('destroy', [AuthController::class, 'destroy'])->name('logout');
 });
