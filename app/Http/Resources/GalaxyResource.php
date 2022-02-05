@@ -15,7 +15,7 @@ class GalaxyResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'light_years' => $this->light_years,
+            'light_years' => $this->light_years . ' ly',
             'name' => $this->name,
             'about' => $this->about
         ];
