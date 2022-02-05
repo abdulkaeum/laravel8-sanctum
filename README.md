@@ -14,7 +14,21 @@ Sanctum is available with Laravel 7+
 
 ## Screenshots
 
-<img src="public/images/register.PNG" width="100" alt="">
-<img src="public/images/login.PNG" width="100" alt="">
-<img src="public/images/profile.PNG" width="100" alt="">
-<img src="public/images/destroy.PNG" width="100" alt="">
+- Register
+<img src="public/images/register.PNG" width="300" alt="">
+- Login
+<img src="public/images/login.PNG" width="300" alt="">
+- View Profile
+<img src="public/images/profile.PNG" width="300" alt="">
+- Sign out
+<img src="public/images/signout.PNG" width="300" alt="">
+- Store new resource 
+<img src="public/images/store.PNG" width="300" alt="">
+- Show paginated resource
+<img src="public/images/index.PNG" width="300" alt="">
+- Show a resource
+<img src="public/images/show.PNG" width="300" alt="">
+- Update a single resource
+<img src="public/images/update.PNG" width="300" alt="">
+- Destroy a resource
+<img src="public/images/delete.PNG" width="300" alt="">
