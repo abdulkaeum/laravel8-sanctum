@@ -21,7 +21,6 @@ class GalaxyController extends Controller
     public function index()
     {
         return GalaxyResource::collection(Galaxy::latest()->paginate(3));
-
     }
 
     /**
@@ -33,15 +32,14 @@ class GalaxyController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make(
-            $request->only('name', 'about', 'light_years'),
-            [
+            $request->only('name', 'about', 'light_years'), [
                 'name' => ['required', 'string', 'min:5', 'max:100', Rule::unique('galaxies', 'name')],
                 'about' => ['string', 'max:250'],
                 'light_years' => ['required', 'integer']
             ]
         );
 
-        if($validator->fails()) {
+        if ($validator->fails()) {
             return response()->json($validator->errors());
         }
 
@@ -60,12 +58,12 @@ class GalaxyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Galaxy $galaxy
      * @return JsonResponse
      */
-    public function show($id)
+    public function show(Galaxy $galaxy)
     {
-        if ($galaxy = Galaxy::where('id', $id)->exists()) {
+        if ($galaxy = Galaxy::where('id', $galaxy->id)->exists()) {
             return response()->json([new GalaxyResource($galaxy)]);
         } else {
             return response()->json('Record not found', 404);
@@ -76,7 +74,7 @@ class GalaxyController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param  Galaxy $galaxy
+     * @param Galaxy $galaxy
      * @return JsonResponse
      */
     public function update(Request $request, Galaxy $galaxy)
@@ -107,7 +105,7 @@ class GalaxyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Galaxy $galaxy
+     * @param Galaxy $galaxy
      * @return JsonResponse
      */
     public function destroy(Galaxy $galaxy)

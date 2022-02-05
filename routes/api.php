@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\GalaxyController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,8 @@ Route::group(['middleware' => ['auth:sanctum']], function (){
     Route::get('profile', function (){
         return auth()->user();
     });
+
+    Route::apiResource('galaxies', GalaxyController::class);
 
     Route::post('destroy', [AuthController::class, 'destroy'])->name('logout');
 });
