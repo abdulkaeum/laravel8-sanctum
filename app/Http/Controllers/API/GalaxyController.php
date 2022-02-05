@@ -63,11 +63,7 @@ class GalaxyController extends Controller
      */
     public function show(Galaxy $galaxy)
     {
-        if ($galaxy = Galaxy::where('id', $galaxy->id)->exists()) {
-            return response()->json([new GalaxyResource($galaxy)]);
-        } else {
-            return response()->json('Record not found', 404);
-        }
+        return $galaxy ? response()->json([new GalaxyResource($galaxy)]) : response()->json('Record not found', 404);
     }
 
     /**
@@ -82,9 +78,9 @@ class GalaxyController extends Controller
         $validator = Validator::make(
             $request->only('name', 'about', 'light_years'),
             [
-                'name' => ['required', 'string', 'min:5', 'max:100', Rule::unique('galaxies', 'name')],
-                'about' => ['string', 'max:250'],
-                'light_years' => ['required', 'integer']
+                'name' => ['sometimes', 'required', 'string', 'min:5', 'max:100', Rule::unique('galaxies', 'name')],
+                'about' => ['sometimes', 'string', 'max:250'],
+                'light_years' => ['sometimes', 'required', 'integer']
             ]
         );
 
