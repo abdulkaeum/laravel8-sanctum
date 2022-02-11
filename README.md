@@ -20,20 +20,28 @@ Sanctum is available with Laravel 7+
 ### Screenshots
 
 - Register
-<img src="public/images/register.PNG" width="300" alt="">
+<img src="public/images/register.PNG" style="max-width: 800px; width: 100%;" alt="">
+
 - Login
-<img src="public/images/login.PNG" width="300" alt="">
+<img src="public/images/login.PNG" style="max-width: 800px; width: 100%;" alt="">
+
 - View Profile
-<img src="public/images/profile.PNG" width="300" alt="">
+<img src="public/images/profile.PNG" style="max-width: 800px; width: 100%;" alt="">
+
 - Sign out
-<img src="public/images/signout.PNG" width="300" alt="">
+<img src="public/images/signout.PNG" style="max-width: 800px; width: 100%;" alt="">
+
 - Store new resource 
-<img src="public/images/store.PNG" width="300" alt="">
+<img src="public/images/store.PNG" style="max-width: 800px; width: 100%;" alt="">
+
 - Show paginated resource
-<img src="public/images/index.PNG" width="300" alt="">
+<img src="public/images/index.PNG" style="max-width: 800px; width: 100%;" alt="">
+
 - Show a resource
-<img src="public/images/show.PNG" width="300" alt="">
+<img src="public/images/show.PNG" style="max-width: 800px; width: 100%;" alt="">
+
 - Update a single resource
-<img src="public/images/update.PNG" width="300" alt="">
+<img src="public/images/update.PNG" style="max-width: 800px; width: 100%;" alt="">
+
 - Destroy a resource
-<img src="public/images/delete.PNG" width="300" alt="">
+<img src="public/images/delete.PNG" style="max-width: 800px; width: 100%;" alt="">
